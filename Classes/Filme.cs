@@ -2,7 +2,7 @@ using System;
 
 namespace DIO.Series
 {
-    public class Serie : EntidadeBase
+    public class Filme : EntidadeBase
     {
         // Atributos
         private Genero Genero { get; set; }
@@ -10,12 +10,10 @@ namespace DIO.Series
         private string Descricao { get; set; }
         private int Ano { get; set; }
 
-        private int Episodios { get; set; }
-
         private bool Excluido {get; set;}
 
         // Métodos
-        public Serie(int id, Genero genero, string titulo, string descricao, int ano, int episodios)
+        public Filme(int id, Genero genero, string titulo, string descricao, int ano)
         {
             this.Id = id;
             this.Genero = genero;
@@ -23,7 +21,6 @@ namespace DIO.Series
             this.Descricao = descricao;
             this.Ano = ano;
             this.Excluido = false;
-            this.Episodios = episodios;
         }
 
         public override string ToString()
@@ -34,7 +31,6 @@ namespace DIO.Series
             retorno += "Descrição: " + this.Descricao + Environment.NewLine;
             retorno += "Ano de Início: " + this.Ano + Environment.NewLine;
             retorno += "Excluido: " + this.Excluido + Environment.NewLine;
-            retorno += "Número de Episódios: " + this.Episodios;
 			return retorno;
         }
 
